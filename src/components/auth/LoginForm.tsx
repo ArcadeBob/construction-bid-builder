@@ -97,11 +97,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: formData.email,
-        password: formData.password,
-        options: {
-          // Set session persistence based on remember me
-          shouldCreateUser: false
-        }
+        password: formData.password
       })
 
       if (error) {

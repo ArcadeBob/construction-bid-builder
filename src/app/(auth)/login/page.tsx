@@ -86,7 +86,7 @@ export default function LoginPage() {
 
           <div className="mt-6 text-center">
             <p className="text-sm text-secondary-600">
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <span className="font-medium text-primary-600">
                 Contact your administrator
               </span>
