@@ -1,7 +1,15 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import Button from '@/components/ui/Button'
 import Logo from '@/components/ui/Logo'
 
 export default function Home() {
+  const router = useRouter()
+
+  const handleStartBuilding = () => {
+    router.push('/login')
+  }
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -16,7 +24,7 @@ export default function Home() {
             glazing and storefront contractors.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-3">
+            <Button size="lg" className="text-lg px-8 py-3" onClick={handleStartBuilding}>
               Start Building Proposals
             </Button>
             <Button variant="secondary" size="lg" className="text-lg px-8 py-3">
