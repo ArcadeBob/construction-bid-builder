@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/utils/supabase/client'
 import Button from '@/components/ui/Button'
+import { useEffect, useState } from 'react'
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -14,23 +15,17 @@ export default function DashboardPage() {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const { data: { user }, error } = await supabase.auth.getUser()
-        if (error || !user) {
-          // Not authenticated, redirect to login
-          router.replace('/login')
-          return
-        }
+        const { data: { user } } = await supabase.auth.getUser()
         setUser(user)
       } catch (error) {
-        console.error('Auth error:', error)
-        router.replace('/login')
+        console.error('Error getting user:', error)
       } finally {
         setIsLoading(false)
       }
     }
 
     getUser()
-  }, [router, supabase.auth])
+  }, [supabase.auth])
 
   const handleSignOut = async () => {
     try {
@@ -56,7 +51,7 @@ export default function DashboardPage() {
   }
 
   if (!user) {
-    return null // Will redirect to login
+    return null // Layout will handle redirect, but this is a fallback
   }
 
   return (
@@ -128,7 +123,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Login Test Success Message */}
+        {/* Route Protection Success Message */}
         <div className="mt-8 bg-green-50 border border-green-200 rounded-lg p-4">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -138,13 +133,13 @@ export default function DashboardPage() {
             </div>
             <div className="ml-3">
               <h3 className="text-sm font-medium text-green-800">
-                Authentication Working!
+                Route Protection Active!
               </h3>
               <div className="mt-2 text-sm text-green-700">
                 <p>
-                  ✅ Login form authentication is working correctly<br/>
-                  ✅ User session management is active<br/>
-                  ✅ Redirect functionality is operational
+                  ✅ Server-side authentication protection is working<br/>
+                  ✅ Unauthorized users are redirected to login<br/>
+                  ✅ Session validation is operational
                 </p>
               </div>
             </div>
