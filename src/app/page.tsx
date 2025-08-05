@@ -1,30 +1,9 @@
+import Button from '@/components/ui/Button'
+import Logo from '@/components/ui/Logo'
+
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b border-secondary-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-primary-800">
-                Construction Bid Builder
-              </h1>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-secondary-600 hover:text-primary-600 font-medium">
-                Features
-              </a>
-              <a href="#" className="text-secondary-600 hover:text-primary-600 font-medium">
-                Pricing
-              </a>
-              <a href="#" className="text-secondary-600 hover:text-primary-600 font-medium">
-                Contact
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -37,12 +16,12 @@ export default function Home() {
             glazing and storefront contractors.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary text-lg px-8 py-3">
+            <Button size="lg" className="text-lg px-8 py-3">
               Start Building Proposals
-            </button>
-            <button className="btn-secondary text-lg px-8 py-3">
+            </Button>
+            <Button variant="secondary" size="lg" className="text-lg px-8 py-3">
               View Demo
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -91,14 +70,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-secondary-900 text-white py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-secondary-300">
-            © 2024 Construction Bid Builder. Built for glazing contractors.
-          </p>
+      {/* Component Showcase */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary-50">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-center text-secondary-800 mb-12">
+            UI Components
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="card">
+              <h4 className="text-xl font-semibold text-secondary-800 mb-4">Button Variants</h4>
+              <div className="space-y-4">
+                <div className="flex flex-wrap gap-2">
+                  <Button>Primary</Button>
+                  <Button variant="secondary">Secondary</Button>
+                  <Button variant="outline">Outline</Button>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Button size="sm">Small</Button>
+                  <Button size="md">Medium</Button>
+                  <Button size="lg">Large</Button>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <h4 className="text-xl font-semibold text-secondary-800 mb-4">Logo Component</h4>
+              <div className="space-y-4">
+                <Logo size="sm" />
+                <Logo size="md" />
+                <Logo size="lg" />
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
-    </main>
+      </section>
+    </div>
   )
 }
