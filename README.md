@@ -177,6 +177,18 @@ Built specifically for:
 - Full type checking
 - IntelliSense support
 
+## ⚙️ Git Configuration (Windows PowerShell)
+
+If you encounter git commands hanging or getting stuck in pager mode on Windows PowerShell, use this **verified working solution**:
+
+```bash
+# Fix git pager issues in PowerShell
+git config --global pager.status false
+git config --global core.pager cat
+```
+
+This resolves PowerShell profile conflicts where Out-Default function overrides cause git output to pipe through `less`. After applying these settings, all git commands (`status`, `log`, `commit`, `push`) will work normally without hanging.
+
 ## 🚀 Deployment
 
 Ready for deployment on:
