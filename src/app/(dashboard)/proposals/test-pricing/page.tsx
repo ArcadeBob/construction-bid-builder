@@ -94,6 +94,8 @@ export default function TestPricingPage() {
       ...item,
       id: `sample-${index}`,
       total: item.quantity * item.unit_price,
+      is_manual_override: item.is_manual_override ?? false,
+      order_index: item.order_index ?? index,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     }));

@@ -58,6 +58,8 @@ export default function PricingSection({
       ...newLineItem,
       id: `temp-${Date.now()}`,
       total: 0,
+      is_manual_override: newLineItem.is_manual_override ?? false,
+      order_index: newLineItem.order_index ?? lineItems.filter(item => item.category === category).length,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     };
@@ -77,7 +79,7 @@ export default function PricingSection({
     onLineItemsChange(updatedItems);
   };
 
-  const handleMaterialSelect = (material: any) => {
+  const handleMaterialSelect = (material: { id: string; name: string; unit: string; suggested_price: number }) => {
     if (currentCategory) {
       const newLineItem: CreateLineItemInput = {
         proposal_id: proposalId,
@@ -95,6 +97,8 @@ export default function PricingSection({
         ...newLineItem,
         id: `temp-${Date.now()}`,
         total: newLineItem.quantity * newLineItem.unit_price,
+        is_manual_override: newLineItem.is_manual_override ?? false,
+        order_index: newLineItem.order_index ?? lineItems.filter(item => item.category === currentCategory).length,
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString()
       };

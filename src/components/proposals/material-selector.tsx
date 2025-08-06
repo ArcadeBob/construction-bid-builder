@@ -128,7 +128,9 @@ export default function MaterialSelector({ onSelect, onClose }: MaterialSelector
     setFilteredMaterials(filtered);
   }, [searchTerm, selectedCategory, materials]);
 
-  const categories = ['all', ...Array.from(new Set(materials.map(m => m.category).filter(Boolean))];
+  const materialCategories = materials.map(m => m.category).filter(Boolean);
+  const uniqueCategories = Array.from(new Set(materialCategories));
+  const categories = ['all', ...uniqueCategories];
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
