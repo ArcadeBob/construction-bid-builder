@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import { ProposalListItem, ProposalStatus, ProposalFilters as ProposalFiltersType, ProposalSortOptions } from '@/types/proposal';
 import ProposalList from '@/components/proposals/proposal-list';
@@ -20,11 +20,7 @@ export default function ProposalsPage() {
 
   const supabase = createClient();
 
-  useEffect(() => {
-    fetchProposals();
-  }, [filters, sort, search]);
-
-  const fetchProposals = async () => {
+  const fetchProposals = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -101,7 +97,11 @@ export default function ProposalsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters, sort, search, supabase]);
+
+  useEffect(() => {
+    fetchProposals();
+  }, [fetchProposals]);
 
   const handleStatusChange = async (proposalId: string, newStatus: ProposalStatus) => {
     try {
@@ -164,8 +164,8 @@ export default function ProposalsPage() {
         throw fetchError;
       }
 
-      // Create a copy with draft status
-      const { data: newProposal, error: createError } = await supabase
+             // Create a copy with draft status
+       const { error: createError } = await supabase
         .from('proposals')
         .insert({
           ...originalProposal,

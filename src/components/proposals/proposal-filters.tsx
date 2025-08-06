@@ -207,10 +207,10 @@ export default function ProposalFilters({
               value={`${sort.field}-${sort.direction}`}
               onChange={(e) => {
                 const [field, direction] = e.target.value.split('-');
-                onSortChange({
-                  field: field as any,
-                  direction: direction as 'asc' | 'desc'
-                });
+                                 onSortChange({
+                   field: field as 'created_at' | 'updated_at' | 'project_name' | 'client_name' | 'total_amount',
+                   direction: direction as 'asc' | 'desc'
+                 });
               }}
               className="block px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
             >

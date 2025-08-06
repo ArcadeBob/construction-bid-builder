@@ -1,6 +1,6 @@
 'use client';
 
-import { ProposalListItem, ProposalStatus, PROJECT_TYPE_LABELS, PROPOSAL_STATUS_LABELS } from '@/types/proposal';
+import { ProposalListItem, ProposalStatus } from '@/types/proposal';
 import ProposalCard from './proposal-card';
 
 interface ProposalListProps {

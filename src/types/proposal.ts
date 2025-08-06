@@ -103,7 +103,7 @@ export interface ProposalSection {
   proposal_id: string;
   section_type: SectionType;
   title: string;
-  content: Record<string, any>; // JSONB content
+  content: Record<string, unknown>; // JSONB content
   order_index: number;
   created_at: string;
   updated_at: string;
@@ -112,7 +112,7 @@ export interface ProposalSection {
 export interface ProposalAutoSave {
   id: string;
   proposal_id: string;
-  snapshot_data: Record<string, any>; // JSONB snapshot
+  snapshot_data: Record<string, unknown>; // JSONB snapshot
   created_at: string;
 }
 
@@ -190,13 +190,13 @@ export interface CreateSectionInput {
   proposal_id: string;
   section_type: SectionType;
   title: string;
-  content: Record<string, any>;
+  content: Record<string, unknown>;
   order_index?: number;
 }
 
 export interface UpdateSectionInput {
   title?: string;
-  content?: Record<string, any>;
+  content?: Record<string, unknown>;
   order_index?: number;
 }
 
