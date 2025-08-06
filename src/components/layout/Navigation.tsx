@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import Button from '../ui/Button';
@@ -19,7 +19,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
     { label: 'Projects', href: '/projects' },
     { label: 'Bids', href: '/bids' },
     { label: 'Reports', href: '/reports' },
-    { label: 'Settings', href: '/settings' }
+    { label: 'Settings', href: '/settings' },
   ];
 
   return (
@@ -39,9 +39,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
           <Button variant="outline" size="sm">
             Sign In
           </Button>
-          <Button size="sm">
-            Get Started
-          </Button>
+          <Button size="sm">Get Started</Button>
         </div>
       </div>
 
@@ -106,4 +104,4 @@ const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
   );
 };
 
-export default Navigation; 
+export default Navigation;

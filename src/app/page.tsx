@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import { useRouter } from 'next/navigation'
-import Button from '@/components/ui/Button'
-import Logo from '@/components/ui/Logo'
+import { useRouter } from 'next/navigation';
+import Button from '@/components/ui/Button';
+import Logo from '@/components/ui/Logo';
 
 export default function Home() {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleStartBuilding = () => {
-    router.push('/login')
-  }
+    router.push('/login');
+  };
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -20,11 +20,15 @@ export default function Home() {
             <span className="text-primary-600">Glazing Contractors</span>
           </h2>
           <p className="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">
-            Create winning bids in minutes, not hours. Built specifically for 
+            Create winning bids in minutes, not hours. Built specifically for
             glazing and storefront contractors.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-3" onClick={handleStartBuilding}>
+            <Button
+              size="lg"
+              className="text-lg px-8 py-3"
+              onClick={handleStartBuilding}
+            >
               Start Building Proposals
             </Button>
             <Button variant="secondary" size="lg" className="text-lg px-8 py-3">
@@ -49,7 +53,8 @@ export default function Home() {
                 Quick Proposals
               </h4>
               <p className="text-secondary-600">
-                Create professional proposals in under 30 minutes with our streamlined workflow.
+                Create professional proposals in under 30 minutes with our
+                streamlined workflow.
               </p>
             </div>
             <div className="card text-center">
@@ -60,7 +65,8 @@ export default function Home() {
                 Smart Pricing
               </h4>
               <p className="text-secondary-600">
-                Built-in pricing database and calculations ensure accurate, competitive bids.
+                Built-in pricing database and calculations ensure accurate,
+                competitive bids.
               </p>
             </div>
             <div className="card text-center">
@@ -71,7 +77,8 @@ export default function Home() {
                 Professional PDFs
               </h4>
               <p className="text-secondary-600">
-                Generate branded, professional PDFs that impress clients and win contracts.
+                Generate branded, professional PDFs that impress clients and win
+                contracts.
               </p>
             </div>
           </div>
@@ -86,7 +93,9 @@ export default function Home() {
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="card">
-              <h4 className="text-xl font-semibold text-secondary-800 mb-4">Button Variants</h4>
+              <h4 className="text-xl font-semibold text-secondary-800 mb-4">
+                Button Variants
+              </h4>
               <div className="space-y-4">
                 <div className="flex flex-wrap gap-2">
                   <Button>Primary</Button>
@@ -101,7 +110,9 @@ export default function Home() {
               </div>
             </div>
             <div className="card">
-              <h4 className="text-xl font-semibold text-secondary-800 mb-4">Logo Component</h4>
+              <h4 className="text-xl font-semibold text-secondary-800 mb-4">
+                Logo Component
+              </h4>
               <div className="space-y-4">
                 <Logo size="sm" />
                 <Logo size="md" />
@@ -112,5 +123,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }

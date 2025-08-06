@@ -4,7 +4,8 @@ A professional bid and proposal builder specifically designed for glazing contra
 
 ## 📋 Project Status
 
-✅ **Clean and Ready for Development**  
+✅ **Clean and Ready for Development**
+
 - All unwanted files removed
 - No duplicate files found
 - All dependencies necessary and up-to-date
@@ -61,6 +62,7 @@ npm run dev
 This application uses Supabase for authentication, database, and storage. Follow these steps to set up your Supabase project:
 
 ### 1. Create Supabase Project
+
 1. Go to [supabase.com](https://supabase.com) and sign up/log in
 2. Click "New Project"
 3. Choose your organization
@@ -71,12 +73,14 @@ This application uses Supabase for authentication, database, and storage. Follow
 5. Click "Create new project"
 
 ### 2. Get Project Credentials
+
 1. In your Supabase dashboard, go to **Settings** → **API**
 2. Copy the following values:
    - **Project URL** (starts with `https://`)
    - **anon public** key (starts with `eyJ`)
 
 ### 3. Configure Environment Variables
+
 Create a `.env.local` file in the project root with:
 
 ```env
@@ -90,6 +94,7 @@ NEXT_PUBLIC_APP_VERSION="1.0.0"
 ```
 
 ### 4. Test Connection
+
 After setup, test your Supabase connection:
 
 ```bash
@@ -117,6 +122,32 @@ npm run lint
 # Start production server
 npm start
 ```
+
+## 🚀 CI/CD Pipeline
+
+This project includes a comprehensive GitHub Actions CI/CD pipeline:
+
+### ✅ Automated Testing
+
+- **Linting**: ESLint with Next.js configuration
+- **Type Checking**: TypeScript strict mode validation
+- **Build Verification**: Production build testing
+- **Security Scanning**: Vulnerability and dependency audits
+- **Code Quality**: Prettier formatting and unused dependency checks
+- **Multi-Node Testing**: Node.js 18.x and 20.x compatibility
+
+### 🔄 Deployment Automation
+
+- **Preview Deployments**: Automatic preview deployments for pull requests
+- **Production Deployment**: Automatic deployment from main branch
+- **Release Management**: Automatic versioning and GitHub releases
+
+### 📋 Pipeline Status
+
+[![CI/CD Pipeline](https://github.com/ArcadeBob/construction-bid-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/ArcadeBob/construction-bid-builder/actions/workflows/ci.yml)
+[![Deploy to Production](https://github.com/ArcadeBob/construction-bid-builder/actions/workflows/deploy.yml/badge.svg)](https://github.com/ArcadeBob/construction-bid-builder/actions/workflows/deploy.yml)
+
+For detailed setup instructions, see [CI/CD Setup Guide](.github/CICD_SETUP.md).
 
 ## 📁 Project Structure
 
@@ -160,6 +191,7 @@ NEXT_PUBLIC_APP_VERSION="1.0.0"
 ## 🎯 Target Audience
 
 Built specifically for:
+
 - **Glazing Contractors**
 - **Storefront Contractors**
 - **Construction Companies**
@@ -192,6 +224,7 @@ This resolves PowerShell profile conflicts where Out-Default function overrides 
 ## 🚀 Deployment
 
 Ready for deployment on:
+
 - Vercel
 - Netlify
 - AWS Amplify

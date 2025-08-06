@@ -9,7 +9,7 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
   const sizeClasses = {
     sm: 'text-lg font-bold',
     md: 'text-xl font-bold',
-    lg: 'text-2xl font-bold'
+    lg: 'text-2xl font-bold',
   };
 
   return (
@@ -24,4 +24,4 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
   );
 };
 
-export default Logo; 
+export default Logo;

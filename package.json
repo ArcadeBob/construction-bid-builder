@@ -6,7 +6,14 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "echo \"No tests specified yet\" && exit 0",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "audit:security": "npm audit --audit-level=high",
+    "deps:check": "depcheck",
+    "ci:all": "npm run lint && npm run type-check && npm run build && npm run format:check && npm run audit:security && npm run deps:check"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
@@ -21,6 +28,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "audit-ci": "^7.1.0",
+    "depcheck": "^1.4.7",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
     "prettier": "^3.6.2",

@@ -8,7 +8,9 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   return (
-    <header className={`bg-white shadow-sm border-b border-secondary-200 sticky top-0 z-40 ${className}`}>
+    <header
+      className={`bg-white shadow-sm border-b border-secondary-200 sticky top-0 z-40 ${className}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -24,4 +26,4 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   );
 };
 
-export default Header; 
+export default Header;

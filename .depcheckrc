@@ -1,0 +1,12 @@
+{
+  "ignores": [
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react-dom",
+    "audit-ci",
+    "eslint",
+    "eslint-config-next",
+    "tailwindcss"
+  ],
+  "skip-missing": true
+}
