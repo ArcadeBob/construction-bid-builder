@@ -90,8 +90,15 @@ export default function DashboardPage() {
             <p className="text-secondary-600">
               Your recent bid proposals will appear here.
             </p>
-            <div className="mt-4 text-sm text-secondary-500">
-              No proposals yet. Create your first proposal to get started!
+            <div className="mt-4">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => router.push('/proposals')}
+                className="w-full"
+              >
+                View All Proposals
+              </Button>
             </div>
           </div>
 
@@ -101,7 +108,12 @@ export default function DashboardPage() {
               Quick Actions
             </h3>
             <div className="space-y-2">
-              <Button variant="primary" size="sm" className="w-full">
+              <Button 
+                variant="primary" 
+                size="sm" 
+                className="w-full"
+                onClick={() => router.push('/proposals/new')}
+              >
                 New Proposal
               </Button>
               <Button variant="secondary" size="sm" className="w-full">
