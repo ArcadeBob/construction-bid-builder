@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ProposalLineItem, LineItemCategory, DEFAULT_UNITS } from '@/types/proposal';
 import Button from '@/components/ui/Button';
 
@@ -43,7 +43,7 @@ export default function LineItemsTable({
     setEditData({});
   };
 
-  const handleInputChange = (field: keyof ProposalLineItem, value: any) => {
+  const handleInputChange = (field: keyof ProposalLineItem, value: string | number | boolean) => {
     setEditData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -62,7 +62,7 @@ export default function LineItemsTable({
     return (
       <div className="text-center py-8 text-gray-500">
         <p>No {category.toLowerCase()} items added yet.</p>
-        <p className="text-sm">Click "Add Item" to get started.</p>
+        <p className="text-sm">Click &quot;Add Item&quot; to get started.</p>
       </div>
     );
   }

@@ -116,8 +116,21 @@ export default function DashboardPage() {
               >
                 New Proposal
               </Button>
-              <Button variant="secondary" size="sm" className="w-full">
-                Browse Templates
+              <Button 
+                variant="secondary" 
+                size="sm" 
+                className="w-full"
+                onClick={() => router.push('/dashboard/pdf-test')}
+              >
+                Test PDF Generation
+              </Button>
+              <Button 
+                variant="secondary" 
+                size="sm" 
+                className="w-full"
+                onClick={() => router.push('/dashboard/workflow-test')}
+              >
+                Test Workflow Management
               </Button>
               <Button variant="outline" size="sm" className="w-full">
                 View Reports
